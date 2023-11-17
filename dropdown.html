@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="container">
+            <div class="dropdown" onmouseover="showDropdown()">
+                <button class="dropbtn">Dropdown</button>
+                <ul class="dropdown-content">
+                    <li><a href="https://google.com">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>    
+        </div>
+    </nav>
+
+    <script>
+        function showDropdown() {
+        const dropdownContent = document.querySelector(".dropdown-content");
+        dropdownContent.style.display = "block";
+        }
+
+        // Hide the dropdown content when the user clicks anywhere outside of it
+        window.addEventListener("click", function(event) {
+        if (!event.target.matches(".dropbtn")) {
+            const dropdownContent = document.querySelector(".dropdown-content");
+            dropdownContent.style.display = "none";
+        }
+        });
+    </script>
+</body>
+</html>
